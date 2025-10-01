@@ -5,10 +5,7 @@ import ChatPopover from "../../components/chat/ChatPopover";
 import { useNavigate } from "react-router-dom";
 import eyeIcon from "../../assets/eye.svg";
 import { io } from "socket.io-client";
-let apiUrl =
-  import.meta.env.VITE_NODE_ENV === "production"
-    ? import.meta.env.VITE_API_BASE_URL
-    : "https://pollingsystem-backend-6qbs.onrender.com";
+let apiUrl ="https://pollingsystem-backend-6qbs.onrender.com";
 const socket = io(apiUrl); // keep your existing socket usage
 
 const TeacherPollPage = () => {

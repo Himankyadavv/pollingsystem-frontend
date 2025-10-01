@@ -4,10 +4,7 @@ import io from "socket.io-client";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import backIcon from "../../assets/back.svg";
-let apiUrl =
-  import.meta.env.VITE_NODE_ENV === "production"
-    ? import.meta.env.VITE_API_BASE_URL
-    : "https://pollingsystem-backend-6qbs.onrender.com";
+let apiUrl ="https://pollingsystem-backend-6qbs.onrender.com";
 const socket = io(apiUrl);
 
 const PollHistoryPage = () => {

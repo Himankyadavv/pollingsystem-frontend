@@ -48,12 +48,12 @@ const TeacherLandingPage = () => {
 
   const validateForm = () => {
     if (question.trim() === "") {
-      setError("Fill up the Question field");
+      setError("Question cannot be empty");
       return false;
     }
 
     if (options.length < 2) {
-      setError("There should be at least two options");
+      setError("At least two options are required");
       return false;
     }
 
@@ -110,7 +110,7 @@ const TeacherLandingPage = () => {
           monitor your students' responses in real-time.
         </p>
 
-        {error && alert(error)}
+        {error && <div className="alert alert-danger mt-3">{alert(error)}</div>}
 
         <div className="mb-4 mt-4">
           <div className="d-flex justify-content-between align-items-center pb-2">

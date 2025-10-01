@@ -100,7 +100,7 @@ const TeacherLandingPage = () => {
             onClick={handleViewPollHistory}
           >
             <img src={eyeIcon} alt="" />
-            View Poll history
+            
           </button>
         </div>
 

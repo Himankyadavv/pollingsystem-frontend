@@ -45,8 +45,7 @@ const LoginPage = () => {
           >
             <p>I'm a Student</p>
             <span>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry
+              Be the one to answer the poll correctly and win exciting prizes!
             </span>
           </div>
           <div
@@ -54,7 +53,7 @@ const LoginPage = () => {
             onClick={() => selectRole("teacher")}
           >
             <p>I'm a Teacher</p>
-            <span>Submit answers and view live poll results in real-time.</span>
+            <span>Create the poll for the students and asks for interesting opinions.</span>
           </div>
         </div>
 

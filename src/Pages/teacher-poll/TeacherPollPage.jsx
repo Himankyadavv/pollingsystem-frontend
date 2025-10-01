@@ -1,24 +1,31 @@
-// frontend/src/Pages/teacher-poll/TeacherPollPage.jsx
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ChatPopover from "../../components/chat/ChatPopover";
 import { useNavigate } from "react-router-dom";
 import eyeIcon from "../../assets/eye.svg";
 import { io } from "socket.io-client";
-let apiUrl ="https://pollingsystem-backend-6qbs.onrender.com";
-const socket = io(apiUrl); // keep your existing socket usage
+
+let apiUrl = "https://pollingsystem-backend-6qbs.onrender.com";
+const socket = io(apiUrl);
 
 const TeacherPollPage = () => {
   const [pollQuestion, setPollQuestion] = useState("");
   const [pollOptions, setPollOptions] = useState([]);
   const [votes, setVotes] = useState({});
-  const navigate = useNavigate(); // fixed: useNavigate hook
+  const [timeLeft, setTimeLeft] = useState(0); // countdown timer
+  const [pollActive, setPollActive] = useState(false);
+  const timerRef = useRef(null);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     socket.on("pollCreated", (pollData) => {
       setPollQuestion(pollData.question);
       setPollOptions(pollData.options);
       setVotes({});
+      const remaining = Math.floor((pollData.endTime - Date.now()) / 1000);
+      setTimeLeft(remaining > 0 ? remaining : 0);
+      setPollActive(true);
     });
 
     socket.on("pollResults", (updatedVotes) => {
@@ -31,6 +38,24 @@ const TeacherPollPage = () => {
     };
   }, []);
 
+  // Timer countdown
+  useEffect(() => {
+    if (timeLeft > 0 && pollActive) {
+      if (timerRef.current) clearInterval(timerRef.current);
+      timerRef.current = setInterval(() => {
+        setTimeLeft((prev) => {
+          if (prev <= 1) {
+            clearInterval(timerRef.current);
+            setPollActive(false); // poll ended
+            return 0;
+          }
+          return prev - 1;
+        });
+      }, 1000);
+    }
+    return () => clearInterval(timerRef.current);
+  }, [timeLeft, pollActive]);
+
   const calculatePercentage = (count) => {
     const totalVotes = Object.values(votes).reduce((a, b) => a + b, 0);
     if (totalVotes === 0) return 0;
@@ -40,6 +65,7 @@ const TeacherPollPage = () => {
   const askNewQuestion = () => {
     navigate("/teacher-home-page");
   };
+
   const handleViewPollHistory = () => {
     navigate("/teacher-poll-history");
   };
@@ -47,15 +73,15 @@ const TeacherPollPage = () => {
   return (
     <>
       <div className="container mt-4">
-        {/* Header: left (title) / right (view history) */}
         <div className="d-flex align-items-center justify-content-between mb-4">
           <div>
-            {/* <h3 className="mb-0">Poll Results</h3>
-            <small className="text-muted">Live results from current poll</small> */}
+            {pollActive && (
+              <h5>
+                Timer: <span className="text-danger">{timeLeft}s</span>
+              </h5>
+            )}
           </div>
-
           <div>
-            {/* kept original button classes untouched */}
             <button
               className="btn rounded-pill ask-question poll-history px-4 m-2"
               onClick={handleViewPollHistory}
@@ -66,7 +92,6 @@ const TeacherPollPage = () => {
           </div>
         </div>
 
-        {/* Poll content */}
         {pollQuestion ? (
           <>
             <div className="card mb-3">
@@ -101,11 +126,11 @@ const TeacherPollPage = () => {
               </div>
             </div>
 
-            {/* Ask new question aligned to the right (keeps your classes) */}
             <div className="d-flex justify-content-end">
               <button
                 className="btn rounded-pill ask-question px-4 m-2"
                 onClick={askNewQuestion}
+                disabled={pollActive} // disable until timer ends
               >
                 + Ask a new question
               </button>
@@ -116,8 +141,6 @@ const TeacherPollPage = () => {
             <div className="text-muted text-center py-5">
               Waiting for the teacher to start a new poll...
             </div>
-
-            {/* When no poll active, keep Ask new question centered but using same classes */}
             <div className="d-flex justify-content-center">
               <button
                 className="btn rounded-pill ask-question px-4 m-2"

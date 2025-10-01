@@ -1,0 +1,20 @@
+.kicked-out-container {
+  background-color: #ffffff;
+}
+
+.intervue-poll-badge {
+  background: linear-gradient(99.18deg, #8F64E1 -46.89%, #4a3875 223.45%);
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.kicked-out-container h1 {
+  color: #333;
+}

@@ -1,7 +1,7 @@
 import React from "react";
 // Import the stars image correctly
 import stars from "../assets/spark.svg"; // Adjust the path according to your folder structure
-
+import "./KickedOutPage.css";
 const KickedOutPage = () => {
   return (
     <div className="vh-100 d-flex justify-content-center align-items-center text-center kicked-out-container">

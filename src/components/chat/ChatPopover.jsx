@@ -113,7 +113,7 @@ const ChatPopover = () => {
               </Nav.Link>
             </Nav.Item>
           </Nav>
-          <Tab.Content className="mt-3">
+          <Tab.Content className="mt-10 ">
             <Tab.Pane eventKey="chat">
               <Chat
                 messages={messages}

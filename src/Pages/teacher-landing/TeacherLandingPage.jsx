@@ -48,12 +48,12 @@ const TeacherLandingPage = () => {
 
   const validateForm = () => {
     if (question.trim() === "") {
-      setError("Question cannot be empty");
+      setError("Fill up the Question field");
       return false;
     }
 
     if (options.length < 2) {
-      setError("At least two options are required");
+      setError("There should be at least two options");
       return false;
     }
 

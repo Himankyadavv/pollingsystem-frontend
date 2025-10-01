@@ -1,6 +1,6 @@
 import React from "react";
-
- // Assuming the spark icon is in this path
+// Import the stars image correctly
+import stars from "../assets/spark.svg"; // Adjust the path according to your folder structure
 
 const KickedOutPage = () => {
   return (
@@ -12,7 +12,7 @@ const KickedOutPage = () => {
         <h1 className="fw-bold mt-3">You've been Kicked out !</h1>
         <p className="text-muted mt-2">
           Looks like the teacher has removed you from the poll system. Please
-          Try again sometime.
+          try again sometime.
         </p>
       </div>
     </div>

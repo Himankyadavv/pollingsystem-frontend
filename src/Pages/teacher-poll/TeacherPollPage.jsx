@@ -8,7 +8,7 @@ import { io } from "socket.io-client";
 let apiUrl =
   import.meta.env.VITE_NODE_ENV === "production"
     ? import.meta.env.VITE_API_BASE_URL
-    : "http://localhost:3000";
+    : "https://pollingsystem-backend-6qbs.onrender.com";
 const socket = io(apiUrl); // keep your existing socket usage
 
 const TeacherPollPage = () => {

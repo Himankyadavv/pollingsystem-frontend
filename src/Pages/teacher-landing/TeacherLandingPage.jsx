@@ -110,7 +110,7 @@ const TeacherLandingPage = () => {
           monitor your students' responses in real-time.
         </p>
 
-        {error && <div className="alert alert-danger mt-3">{error}</div>}
+        {error && <div className="alert alert-danger mt-3">{alert(error)}</div>}
 
         <div className="mb-4 mt-4">
           <div className="d-flex justify-content-between align-items-center pb-2">

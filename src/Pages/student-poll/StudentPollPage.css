@@ -1,24 +1,88 @@
-.progress-bar-bg{
-    background-color: #7565d9 
-}
-.option-border{
-    border-color: #7565d9 !important
-}
-.question{
-    background: linear-gradient(90deg, #343434 0%, #6E6E6E 100%);
-
+/* Existing styles */
+.progress-bar-bg {
+  background-color: #7565d9;
 }
 
-  
+.option-border {
+  border-color: #7565d9 !important;
+}
+
+.question {
+  background: linear-gradient(90deg, #343434 0%, #6E6E6E 100%);
+}
+
 .landing-title {
-    font-size: 1.5rem;
-    font-weight: 700;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.landing-description {
+  margin-bottom: 30px;
+  color: #6c757d;
+}
+
+.spinner {
+  color: rgba(80, 14, 206, 1);
+}
+
+/* Responsive Adjustments */
+
+/* Container width on smaller screens */
+@media (max-width: 992px) {
+  .container.w-50 {
+    width: 90% !important;
+    margin: 0 auto;
   }
-  
-  .landing-description {
-    margin-bottom: 30px;
-    color: #6c757d;
+
+  .list-group-item {
+    font-size: 0.9rem;
+    padding: 8px;
   }
-  .spinner{
-    color: rgba(80, 14, 206, 1);
+
+  .question {
+    font-size: 0.95rem;
+    padding: 8px;
   }
+
+  .d-flex.justify-content-end button.continue-btn {
+    width: 40% !important;
+  }
+
+  .card-body h6.question {
+    font-size: 1rem;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 576px) {
+  .container.w-50 {
+    width: 95% !important;
+  }
+
+  .list-group-item {
+    font-size: 0.85rem;
+    padding: 6px;
+  }
+
+  .d-flex.justify-content-end button.continue-btn {
+    width: 60% !important;
+  }
+
+  .d-flex.align-items-center.mb-4 h5 {
+    font-size: 1rem;
+  }
+
+  .d-flex.align-items-center.mb-4 img {
+    width: 12px !important;
+  }
+
+  .d-flex.align-items-center.mb-4 span {
+    font-size: 0.85rem;
+  }
+}
+
+/* Center spinner and landing content on small screens */
+.student-landing-container {
+  width: 100%;
+  padding: 0 10px;
+}

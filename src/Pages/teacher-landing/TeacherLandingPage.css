@@ -1,0 +1,188 @@
+/* --- BASE & MOBILE STYLES --- */
+
+/* Main page wrapper for layout */
+.teacher-page-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #ffffff;
+}
+
+/* Main content area for mobile */
+.poll-creation-container {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 1.5rem 1rem; /* Reduced padding for small screens */
+}
+
+/* Header section styling for mobile */
+.header-actions {
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically */
+  align-items: flex-start; /* Align to the left */
+  gap: 0.5rem; /* Add space between stacked buttons */
+  margin-bottom: 1rem;
+}
+
+/* General Input and Textarea Styling */
+#question,
+.option-input {
+  background-color: #f8f9fa !important;
+  border: 1px solid #dee2e6 !important;
+  padding: 0.75rem 1rem !important;
+  font-size: 1rem;
+  width: 100%; /* Make inputs full-width on mobile */
+}
+
+.form-label {
+  font-weight: 500;
+}
+
+/* Question section header on mobile */
+.question-header {
+  display: flex;
+  flex-direction: column; /* Stack label and timer */
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.timer-dropdown {
+  width: auto;
+  border: none;
+  font-weight: 500;
+  color: #6c757d;
+  padding-left: 0; /* Align with left edge */
+}
+
+/* Option number circle */
+.sNo {
+  background: linear-gradient(243.94deg, #8f64e1 -50.82%, #4e377b 216.33%);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Options section header on mobile */
+.options-header {
+    display: flex;
+    flex-direction: column; /* Stack labels */
+    align-items: flex-start;
+    gap: 0.25rem;
+}
+
+/* Individual option row on mobile */
+.option-row {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* On mobile, the input takes the full width */
+.option-input.flex-grow-1 {
+    flex-basis: 100%;
+}
+
+/* Radio button styling */
+input[type="radio"]:checked {
+  background-color: #8f64e1;
+  border-color: #8f64e1;
+  box-shadow: none;
+}
+
+/* Wrapper for Yes/No buttons on mobile */
+.correct-answer-group {
+  display: flex;
+  justify-content: flex-start; /* Align to the left */
+  gap: 1rem;
+  width: 100%; /* Take full width on its own line */
+  padding-left: 48px; /* Indent to align with input above */
+}
+
+/* Add more option button */
+.add-options {
+  color: #8f64e1 !important;
+  border: 1px solid #8f64e1 !important;
+  font-weight: 500;
+  background-color: transparent !important;
+}
+
+/* Footer section styling */
+.footer-actions {
+  padding: 1rem;
+  border-top: 1px solid #e9ecef;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center; /* Center button on mobile */
+}
+
+.ask-question {
+  background: linear-gradient(99.18deg, #8f64e1 -46.89%, #1d68bd 223.45%);
+  color: #ffffff !important;
+  font-weight: 500;
+  padding: 0.6rem 2rem;
+  width: 100%; /* Make button full-width on mobile */
+}
+
+
+/* --- TABLET & DESKTOP STYLES --- */
+@media (min-width: 768px) {
+
+  /* Restore spacious padding and set a max-width for content */
+  .poll-creation-container {
+    padding: 2rem 5rem;
+    max-width: 1200px; /* Prevents layout from becoming too wide */
+    margin: 0 auto; /* Center the container on very large screens */
+  }
+
+  /* Restore side-by-side layout for header buttons */
+  .header-actions {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Restore side-by-side layout for question header */
+  .question-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Restore side-by-side layout for options header */
+  .options-header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .option-row {
+    flex-wrap: nowrap; /* Prevent wrapping on large screens */
+  }
+
+  /* Restore fixed-width column for "Is it Correct?" */
+  .is-correct-header {
+    width: 160px;
+    text-align: center;
+  }
+  
+  .correct-answer-group {
+    width: 160px;
+    justify-content: space-around;
+    padding-left: 0; /* Remove mobile indent */
+  }
+  
+  /* Restore footer layout */
+  .footer-actions {
+    padding: 1rem 5rem;
+    justify-content: flex-end; /* Align button to the right */
+  }
+
+  .ask-question {
+    width: auto; /* Allow button to size to its content */
+  }
+}

@@ -7,7 +7,7 @@ import TeacherPollPage from "./Pages/teacher-poll/TeacherPollPage";
 import PollHistoryPage from "./Pages/poll-history/PollHistory";
 import TeacherProtectedRoute from "./components/route-protect/TeacherProtect";
 import StudentProtectedRoute from "./components/route-protect/StudentProtect";
-import KickedOutPage from "./pages/KickedOutPage";
+import KickedOutPage from "./Pages/KickedOutPage";
 
 function App() {
   return (

@@ -96,7 +96,7 @@ const TeacherLandingPage = () => {
             <p style={{color: "red", alignContent:"center", font:"bold"}}>DISCLAIMER</p>
             <p>In order for this application to work you should also access the application as a <b><strong>STUDENT</strong></b> on the other device</p>
          </marquee> */}
-         <marquee  direction="right" scrollamount="15" style={{display:"flex", flexdirection:"row", justifyContent:"space-between", fontSize:"20px",paddingTop:"10px"}} >
+         <marquee  direction="left" scrollamount="12" style={{display:"flex", flexdirection:"row", justifyContent:"space-between", fontSize:"20px",paddingTop:"10px"}} >
             {/* <p style={{color: "red", alignContent:"center", font:"bold", margin:"10px"}}><b>DISCLAIMER</b></p> */}
             <p style={{margin:"10px 0px", fontSize:"25px"}}><span><b style={{color: "red"}}>DISCLAIMER: </b></span> In order for this application to work you should also access the application as a <b><strong>STUDENT</strong></b> on the other device</p>
          </marquee>

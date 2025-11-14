@@ -25,17 +25,44 @@ const LoginPage = () => {
 
   return (
     <div className="d-flex justify-content-center flex-column align-items-center vh-100">
-      <div className="notes" style={{display:"flex", flexdirection:"row", justifyContent:"center", alignItems:"center", color:"black", position:"absolute", top:"10px"}}>
-        
-         {/* <marquee  direction="right" scrollamount="15" style={{display:"flex", flexdirection:"row"}} >
-            <p style={{color: "red", alignContent:"center", font:"bold"}}>DISCLAIMER</p>
-            <p>In order for this application to work you should also access the application as a <b><strong>STUDENT</strong></b> on the other device</p>
-         </marquee> */}
-         <div  direction="right" scrollamount="15" style={{display:"flex", flexdirection:"row", justifyContent:"space-between", fontSize:"20px",paddingTop:"10px"}} >
-            {/* <p style={{color: "red", alignContent:"center", font:"bold", margin:"10px"}}><b>DISCLAIMER</b></p> */}
-            <p style={{margin:"10px 0px", fontSize:"25px"}}><span><b style={{color: "red"}}>DISCLAIMER: </b></span> In order for this application to work you should also access the application as a <b><strong>TEACHER</strong></b> on the other device</p>
-         </div>
+      <div
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          right: 0,
+          width: "100%",
+
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          padding: "12px 16px",
+          zIndex: 50,
+        }}
+      >
+        <p
+          style={{
+            textAlign: "center",
+            fontSize: "clamp(14px, 3vw, 28px)",
+            fontWeight: 500,
+            lineHeight: 1.5,
+            maxWidth: "1024px",
+            margin: 0,
+          }}
+        >
+          <span>
+            <b style={{ color: "#dc2626" }}>DISCLAIMER: </b>
+          </span>
+          In order for this application to work you should also access the
+          application as a
+          <b style={{ fontWeight: "bold", color: "#dc2626" }}>
+            {" "}
+            TEACHER or STUDENT
+          </b>{" "}
+          on the other device
+        </p>
       </div>
+
       <div className="poll-container text-center">
         <button className="btn btn-sm intervue-btn mb-5">
           <img src={stars} className="px-1" alt="" />
@@ -64,7 +91,10 @@ const LoginPage = () => {
             onClick={() => selectRole("teacher")}
           >
             <p>I'm a Teacher</p>
-            <span>Create the poll for the students and asks for interesting opinions.</span>
+            <span>
+              Create the poll for the students and asks for interesting
+              opinions.
+            </span>
           </div>
         </div>
 

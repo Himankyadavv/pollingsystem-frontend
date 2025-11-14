@@ -24,7 +24,18 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="d-flex justify-content-center align-items-center vh-100">
+    <div className="d-flex justify-content-center flex-column align-items-center vh-100">
+      <div className="notes" style={{display:"flex", flexdirection:"row", justifyContent:"center", alignItems:"center", color:"black", position:"absolute", top:"10px"}}>
+        
+         {/* <marquee  direction="right" scrollamount="15" style={{display:"flex", flexdirection:"row"}} >
+            <p style={{color: "red", alignContent:"center", font:"bold"}}>DISCLAIMER</p>
+            <p>In order for this application to work you should also access the application as a <b><strong>STUDENT</strong></b> on the other device</p>
+         </marquee> */}
+         <div  direction="right" scrollamount="15" style={{display:"flex", flexdirection:"row", justifyContent:"space-between", fontSize:"20px",paddingTop:"10px"}} >
+            {/* <p style={{color: "red", alignContent:"center", font:"bold", margin:"10px"}}><b>DISCLAIMER</b></p> */}
+            <p style={{margin:"10px 0px", fontSize:"25px"}}><span><b style={{color: "red"}}>DISCLAIMER: </b></span> In order for this application to work you should also access the application as a <b><strong>TEACHER</strong></b> on the other device</p>
+         </div>
+      </div>
       <div className="poll-container text-center">
         <button className="btn btn-sm intervue-btn mb-5">
           <img src={stars} className="px-1" alt="" />

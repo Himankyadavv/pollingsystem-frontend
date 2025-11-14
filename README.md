@@ -24,34 +24,5 @@ This project is a real-time polling system that allows teachers to create live p
 
 ---
 
-## Frontend Setup
 
-### Prerequisites
-Make sure you have the following installed:
-- Node.js (developed with 22.5.1)
-- npm
 
-### Installation
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/saran-mani/intervue-poll-frontend.git
-   cd intervue-poll-frontend
-   ```
-
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-3. Start the development server:
-   ```bash
-   npm run dev
-   ```
-
-## Running the Application
-
-1. The frontend will be available at:
-   ```
-   http://localhost:5173/
-   ```

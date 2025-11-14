@@ -24,7 +24,20 @@ const StudentLandingPage = () => {
   };
 
   return (
-    <div className="d-flex justify-content-center align-items-center vh-100 w-50  mx-auto">
+    <div>
+      <div className="notes" style={{display:"flex", flexdirection:"row", justifyContent:"center", alignItems:"center", color:"black"}}>
+        
+         {/* <marquee  direction="right" scrollamount="15" style={{display:"flex", flexdirection:"row"}} >
+            <p style={{color: "red", alignContent:"center", font:"bold"}}>DISCLAIMER</p>
+            <p>In order for this application to work you should also access the application as a <b><strong>STUDENT</strong></b> on the other device</p>
+         </marquee> */}
+         <marquee  direction="right" scrollamount="15" style={{display:"flex", flexdirection:"row", justifyContent:"space-between", fontSize:"20px",paddingTop:"10px"}} >
+            {/* <p style={{color: "red", alignContent:"center", font:"bold", margin:"10px"}}><b>DISCLAIMER</b></p> */}
+            <p style={{margin:"10px 0px", fontSize:"25px"}}><span><b style={{color: "red"}}>DISCLAIMER: </b></span> In order for this application to work you should also access the application as a <b><strong>TEACHER</strong></b> on the other device</p>
+         </marquee>
+      </div>
+      <div className="d-flex justify-content-center  align-items-center vh-100 w-50  mx-auto">
+      
       <div className="student-landing-container text-center">
         <button className="btn btn-sm intervue-btn mb-5">
           <img src={stars} className="px-1" alt="" />
@@ -54,6 +67,8 @@ const StudentLandingPage = () => {
         </form>
       </div>
     </div>
+    </div>
+    
   );
 };
 
